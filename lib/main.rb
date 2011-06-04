@@ -1,3 +1,5 @@
+require 'cgi'
+require 'open-uri'
 require 'spreadsheet'
 require 'vpim/vcard'
 
@@ -5,73 +7,66 @@ FIRST_NAME = 0
 LAST_NAME = 1
 
 def generate_vcard(row)
-  card = Vpim::Vcard::Maker.make2 do |maker|
+  Vpim::Vcard::Maker.make2 do |maker|
     maker.add_name do |name|
-      name.prefix = 'Dr.'
+#      name.prefix = 'Dr.'
       name.given = row[FIRST_NAME]
       name.family = row[LAST_NAME]
     end
 
+    maker.org = "Company X"
+
+    maker.title = "title awesome"
+
     maker.add_addr do |addr|
-      addr.preferred = true
-      addr.location = 'work'
+      addr.location = 'WORK'
       addr.street = '12 Last Row, 13th Section'
       addr.locality = 'City of Lost Children'
       addr.country = 'Cinema'
     end
 
-    maker.add_addr do |addr|
-      addr.location = ['home', 'zoo']
-      addr.delivery = ['snail', 'stork', 'camel']
-      addr.street = '12 Last Row, 13th Section'
-      addr.locality = 'City of Lost Children'
-      addr.country = 'Cinema'
+#    maker.nickname = "The Good Doctor"
+
+    maker.add_tel('416-123-5555') do |tel|
+      tel.preferred = true
+      tel.location = 'WORK'
     end
-
-    maker.nickname = "The Good Doctor"
-
-    maker.birthday = Date.today
-
-    maker.add_photo do |photo|
-      photo.link = 'http://example.com/image.png'
-    end
-
-    maker.add_photo do |photo|
-      photo.image = "File.open('drdeath.jpg').read # a fake string, real data is too large :-)"
-      photo.type = 'jpeg'
-    end
-
-    maker.add_tel('416 123 1111')
-
-    maker.add_tel('416 123 2222') { |t| t.location = 'home'; t.preferred = true }
-
-    maker.add_impp('joe') do |impp|
-      impp.preferred = 'yes'
-      impp.location = 'mobile'
-    end
-
-    maker.add_x_aim('example') do |xaim|
-      xaim.location = 'row12'
-    end
-
     maker.add_tel('416-123-3333') do |tel|
-      tel.location = 'work'
-      tel.capability = 'fax'
+      tel.location = 'CELL'
     end
 
-    maker.add_email('drdeath@work.com') { |e| e.location = 'work' }
-
-    maker.add_email('drdeath@home.net') { |e| e.preferred = 'yes' }
-
+    maker.add_email('drdeath@work.com') do |email|
+      email.location = 'WORK'
+    end
   end
-  card
+end
+
+def qr_code_url(data)
+  size = 250
+  "http://chart.apis.google.com/chart?cht=qr&chl=#{CGI.escape(data.to_s)}&choe=UTF-8&chld=M&chs=#{size}x#{size}"
+end
+
+def save_vcard(vcard, index)
+  open("contact#{index}.vcf", 'wb') do |file|
+    file << vcard.to_s
+  end
+end
+
+def save_vcard_as_qrcode(vcard, index)
+  url = qr_code_url(vcard)
+  open("qr#{index}.png", 'wb') do |file|
+    file << open(url).read
+  end
 end
 
 def process_row(row, index)
   return if row_empty?(row)
   puts "Processing #{index} #{row[FIRST_NAME]} #{row[LAST_NAME]}"
   card = generate_vcard(row)
-  puts card.to_s
+  if index == 2
+    save_vcard(card, index)
+    save_vcard_as_qrcode(card, index)
+  end
 end
 
 def row_empty?(row)
