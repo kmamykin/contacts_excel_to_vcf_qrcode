@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="RUBY_MODULE" version="4">
+  <component name="GemRequirementsHolder" version="3">
+    <requirement>
+      <requirement>
+        <dependency name="prawn" version="0" bound="GREATER_OR_EQUAL" git="true" path="false" ref="72965aeda923" doRequire="true" />
+      </requirement>
+      <source from="Gemfile" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="rspec-rails" version="0" bound="GREATER_OR_EQUAL" git="false" path="false" doRequire="true" />
+      </requirement>
+      <source from="Gemfile" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="spreadsheet" version="0.6.5.1" bound="LATEST_IN_BRANCH" git="false" path="false" doRequire="true" />
+      </requirement>
+      <source from="Gemfile" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="ttfunk" version="0" bound="GREATER_OR_EQUAL" git="true" path="false" doRequire="true" />
+      </requirement>
+      <source from="Gemfile" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="vpim" version="0" bound="GREATER_OR_EQUAL" git="false" path="false" doRequire="true" />
+      </requirement>
+      <source from="Gemfile" />
+    </requirement>
+  </component>
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] bundler (v1.0.14, /home/kmamykin/.rvm/gems/ruby-1.9.2-p180@qr-gen/gems/bundler-1.0.14)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] spreadsheet (v0.6.5.4, /home/kmamykin/.rvm/gems/ruby-1.9.2-p180@qr-gen/gems/spreadsheet-0.6.5.4)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] prawn (vPRAWN_VERSION, /home/kmamykin/.rvm/gems/ruby-1.9.2-p180@qr-gen/bundler/gems/prawn-72965aeda923)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] ttfunk (v1.0.1, /home/kmamykin/.rvm/gems/ruby-1.9.2-p180@qr-gen/bundler/gems/ttfunk-ad189671d86f)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rspec-rails (v2.6.1, /home/kmamykin/.rvm/gems/ruby-1.9.2-p180@qr-gen/gems/rspec-rails-2.6.1)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] vpim (v0.695, /home/kmamykin/.rvm/gems/ruby-1.9.2-p180@qr-gen/gems/vpim-0.695)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] thor (v0.14.6, /home/kmamykin/.rvm/gems/ruby-1.9.2-p180@qr-gen/gems/thor-0.14.6)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rspec-core (v2.6.3, /home/kmamykin/.rvm/gems/ruby-1.9.2-p180@qr-gen/gems/rspec-core-2.6.3)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] erubis (v2.6.6, /home/kmamykin/.rvm/gems/ruby-1.9.2-p180@qr-gen/gems/erubis-2.6.6)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] abstract (v1.0.0, /home/kmamykin/.rvm/gems/ruby-1.9.2-p180@qr-gen/gems/abstract-1.0.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] activemodel (v3.0.7, /home/kmamykin/.rvm/gems/ruby-1.9.2-p180@qr-gen/gems/activemodel-3.0.7)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] tzinfo (v0.3.27, /home/kmamykin/.rvm/gems/ruby-1.9.2-p180@qr-gen/gems/tzinfo-0.3.27)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] ruby-ole (v1.2.11.1, /home/kmamykin/.rvm/gems/ruby-1.9.2-p180@qr-gen/gems/ruby-ole-1.2.11.1)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rspec-expectations (v2.6.0, /home/kmamykin/.rvm/gems/ruby-1.9.2-p180@qr-gen/gems/rspec-expectations-2.6.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] Ascii85 (v1.0.1, /home/kmamykin/.rvm/gems/ruby-1.9.2-p180@qr-gen/gems/Ascii85-1.0.1)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rspec-mocks (v2.6.0, /home/kmamykin/.rvm/gems/ruby-1.9.2-p180@qr-gen/gems/rspec-mocks-2.6.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rack (v1.2.3, /home/kmamykin/.rvm/gems/ruby-1.9.2-p180@qr-gen/gems/rack-1.2.3)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] activesupport (v3.0.7, /home/kmamykin/.rvm/gems/ruby-1.9.2-p180@qr-gen/gems/activesupport-3.0.7)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] i18n (v0.5.0, /home/kmamykin/.rvm/gems/ruby-1.9.2-p180@qr-gen/gems/i18n-0.5.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] actionpack (v3.0.7, /home/kmamykin/.rvm/gems/ruby-1.9.2-p180@qr-gen/gems/actionpack-3.0.7)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rack-mount (v0.6.14, /home/kmamykin/.rvm/gems/ruby-1.9.2-p180@qr-gen/gems/rack-mount-0.6.14)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] railties (v3.0.7, /home/kmamykin/.rvm/gems/ruby-1.9.2-p180@qr-gen/gems/railties-3.0.7)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] ttfunk (v1.0.1, /home/kmamykin/.rvm/gems/ruby-1.9.2-p180@qr-gen/bundler/gems/ttfunk-ad189671d86f)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] diff-lcs (v1.1.2, /home/kmamykin/.rvm/gems/ruby-1.9.2-p180@qr-gen/gems/diff-lcs-1.1.2)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rack-test (v0.5.7, /home/kmamykin/.rvm/gems/ruby-1.9.2-p180@qr-gen/gems/rack-test-0.5.7)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] pdf-reader (v0.9.2, /home/kmamykin/.rvm/gems/ruby-1.9.2-p180@qr-gen/gems/pdf-reader-0.9.2)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rake (v0.9.1, /home/kmamykin/.rvm/gems/ruby-1.9.2-p180@qr-gen/gems/rake-0.9.1)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] builder (v2.1.2, /home/kmamykin/.rvm/gems/ruby-1.9.2-p180@qr-gen/gems/builder-2.1.2)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rspec (v2.6.0, /home/kmamykin/.rvm/gems/ruby-1.9.2-p180@qr-gen/gems/rspec-2.6.0)" level="application" />
+  </component>
+</module>
+
