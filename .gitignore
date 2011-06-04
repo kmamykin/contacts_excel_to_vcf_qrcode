@@ -1,3 +1,4 @@
 .idea/.name
 .idea/workspace.xml
-
+data/*.png
+data/*.vcf

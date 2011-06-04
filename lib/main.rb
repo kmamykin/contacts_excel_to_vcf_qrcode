@@ -6,6 +6,13 @@ require 'vpim/vcard'
 FIRST_NAME = 0
 LAST_NAME = 1
 
+file = ARGV[0]
+
+def cleanup_files
+  puts Dir.glob("data/*.png") { |f| File.delete f }
+  puts Dir.glob("data/*.vcf") { |f| File.delete f }
+end
+
 def generate_vcard(row)
   Vpim::Vcard::Maker.make2 do |maker|
     maker.add_name do |name|
@@ -47,14 +54,14 @@ def qr_code_url(data)
 end
 
 def save_vcard(vcard, index)
-  open("contact#{index}.vcf", 'wb') do |file|
+  open("data/contact#{index}.vcf", 'wb') do |file|
     file << vcard.to_s
   end
 end
 
 def save_vcard_as_qrcode(vcard, index)
   url = qr_code_url(vcard)
-  open("qr#{index}.png", 'wb') do |file|
+  open("data/qr#{index}.png", 'wb') do |file|
     file << open(url).read
   end
 end
@@ -63,10 +70,8 @@ def process_row(row, index)
   return if row_empty?(row)
   puts "Processing #{index} #{row[FIRST_NAME]} #{row[LAST_NAME]}"
   card = generate_vcard(row)
-  if index == 2
-    save_vcard(card, index)
-    save_vcard_as_qrcode(card, index)
-  end
+  save_vcard(card, index)
+  save_vcard_as_qrcode(card, index)
 end
 
 def row_empty?(row)
@@ -77,10 +82,10 @@ def value_blank?(value)
   value.nil? or value.empty?
 end
 
-file = ARGV[0]
 book = Spreadsheet.open file
 sheet= book.worksheet(0)
 puts "Skipping header #{sheet.row(0)}"
+cleanup_files
 (1..sheet.row_count).to_a.each do |i|
   r = sheet.row(i)
   process_row(r, i)
