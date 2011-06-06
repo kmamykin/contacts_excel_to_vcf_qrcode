@@ -2,3 +2,4 @@
 .idea/workspace.xml
 data/*.png
 data/*.vcf
+.DS_Store
