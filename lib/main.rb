@@ -5,6 +5,8 @@ require 'vpim/vcard'
 
 FIRST_NAME = 0
 LAST_NAME = 1
+COMPANY = 2
+TITLE = 3
 
 file = ARGV[0]
 
@@ -21,28 +23,28 @@ def generate_vcard(row)
       name.family = row[LAST_NAME]
     end
 
-    maker.org = "Company X"
+    maker.org = row[COMPANY]
 
-    maker.title = "title awesome"
+    maker.title = row[TITLE]
 
     maker.add_addr do |addr|
       addr.location = 'WORK'
-      addr.street = '12 Last Row, 13th Section'
-      addr.locality = 'City of Lost Children'
-      addr.country = 'Cinema'
+      addr.street = '412 Broadway, Floor 2'
+      addr.locality = 'New York, NY 10013'
+      addr.country = 'USA'
     end
 
 #    maker.nickname = "The Good Doctor"
 
-    maker.add_tel('416-123-5555') do |tel|
+    maker.add_tel('201 259 3309') do |tel|
       tel.preferred = true
       tel.location = 'WORK'
     end
-    maker.add_tel('416-123-3333') do |tel|
+    maker.add_tel('201 259 3309') do |tel|
       tel.location = 'CELL'
     end
 
-    maker.add_email('drdeath@work.com') do |email|
+    maker.add_email('john@qrio.us') do |email|
       email.location = 'WORK'
     end
   end
